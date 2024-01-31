@@ -1,13 +1,19 @@
 body
 {
     zoom: 150%;
-    margin-top: 10%; 
 }
 .main
 {
     display: flex; 
     justify-content: center;
     gap: 50px; 
+}
+.title
+{
+    font-size: 75px; 
+    text-align: center;
+    margin: 0; 
+    padding: 10px;
 }
 .container
 {
@@ -43,7 +49,11 @@ body
     padding: 10px;
     border-radius: 15px;  
 }
+#slider-picker
+{
+    accent-color: #000000;
 
+}
 .grid
 {
     display: flex;
