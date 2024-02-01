@@ -1,10 +1,29 @@
 let blockSize = 20;
-
 const grid = document.querySelector('.grid');
 const slider = document.getElementById('slider-picker');
 const sliderText = document.querySelector('.slidetext');
 let block = document.querySelectorAll('.block');
 let sliderValue = slider.value; 
+
+
+
+function clearGrid()
+{
+    grid.innerHTML = ''; 
+}
+slider.addEventListener('mousemove', () => 
+{
+    clearGrid(); 
+    sliderValue = slider.value; 
+    sliderText.textContent = sliderValue + " x " + sliderValue;
+    getGrid(sliderValue); 
+});
+
+let clearButton = document.getElementById('button-clear'); 
+clearButton.addEventListener('click', () => {
+    let block = document.querySelectorAll('.block');
+    block.forEach(function (e) {e.style.backgroundColor = 'white'})
+}); 
 
 getGrid(16); 
 function getGrid(val)
@@ -27,25 +46,4 @@ function getGrid(val)
     })
 }); 
 }
-
-function clearGrid()
-{
-    grid.innerHTML = ''; 
-}
-
-slider.addEventListener('mousemove', () => 
-{
-    clearGrid(); 
-    sliderValue = slider.value; 
-    sliderText.textContent = sliderValue + " x " + sliderValue;
-    getGrid(sliderValue); 
-}); 
-
-let clearButton = document.getElementById('button-clear'); 
-clearButton.addEventListener('click', () => {
-    let block = document.querySelectorAll('.block');
-    block.forEach(function (e) {e.style.backgroundColor = 'white'})
-}); 
-
-
 
