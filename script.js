@@ -1,20 +1,10 @@
-const grid = document.querySelector('.grid');
 let blockSize = 20;
 
+const grid = document.querySelector('.grid');
 const slider = document.getElementById('slider-picker');
 const sliderText = document.querySelector('.slidetext');
 let block = document.querySelectorAll('.block');
-
 let sliderValue = slider.value; 
-
-for(let i = 0; i < 256; i++)
-{
-    const div = document.createElement('div'); 
-    div.style.height = '20px'; 
-    div.style.width = '20px';
-    div.className = 'block'; 
-    grid.appendChild(div);
-}
 
 getGrid(16); 
 function getGrid(val)
@@ -26,7 +16,6 @@ function getGrid(val)
         let math = 320/sliderValue
         div.style.height = math + 'px'; 
         div.style.width = math + 'px';
-        console.log()
         div.className = 'block';
         grid.appendChild(div);
     }
@@ -37,12 +26,13 @@ function getGrid(val)
     element.style.backgroundColor = cB; 
     })
 }); 
-
 }
+
 function clearGrid()
 {
     grid.innerHTML = ''; 
 }
+
 slider.addEventListener('mousemove', () => 
 {
     clearGrid(); 
